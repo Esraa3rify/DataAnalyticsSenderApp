@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "314852650957",
+    "project_id": "proven-b1458",
+    "storage_bucket": "proven-b1458.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:314852650957:android:ecda307a07e7c9685d1e84",
+        "android_client_info": {
+          "package_name": "com.example.proven"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "314852650957-kbd3oh1jslfc3race04n73nuncg1afju.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvMdreMzdZDk5SIAxFcC7h3ey3ctES9Yk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "314852650957-kbd3oh1jslfc3race04n73nuncg1afju.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

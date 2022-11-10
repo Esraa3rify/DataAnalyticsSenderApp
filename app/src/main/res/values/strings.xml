@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Proven</string>
+    <string name="time_spent_in_the_activity">Time spent in the activity</string>
 </resources>

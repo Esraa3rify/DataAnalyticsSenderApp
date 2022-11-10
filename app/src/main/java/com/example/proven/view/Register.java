@@ -1,4 +1,4 @@
-package com.example.proven.ui;
+package com.example.proven.view;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,9 +12,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.proven.MainActivity;
 import com.example.proven.R;
 import com.example.proven.model.Users;
+import com.example.proven.view.dataAnalytics.CustomBtn;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
@@ -26,13 +26,16 @@ import com.google.firebase.database.ValueEventListener;
 public class Register extends AppCompatActivity {
 
     private Button createAccount;
+
     private EditText registerName, registerPhoneNum, registerPassNum;
     private ProgressDialog LoadingBar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
 
         createAccount=(Button) findViewById(R.id.createAcount);
         registerName=(EditText) findViewById(R.id.registerName);
@@ -114,7 +117,7 @@ public class Register extends AppCompatActivity {
 
                                         //take user to login page
 
-                                        Intent intent= new Intent(Register.this,Login.class);
+                                        Intent intent= new Intent(Register.this, CustomBtn.class);
                                         startActivity(intent);
                                         //creating account is failed
                                     }else{
@@ -136,7 +139,7 @@ public class Register extends AppCompatActivity {
 
                     Toast.makeText(Register.this, "NetWork Error, Please Try Again Using Another Phone Number.", Toast.LENGTH_SHORT).show();
 
-                    Intent intent= new Intent(Register.this, MainActivity.class);
+                    Intent intent= new Intent(Register.this, CustomBtn.class);
                     startActivity(intent);
                 }
 
@@ -150,6 +153,8 @@ public class Register extends AppCompatActivity {
         });
 
     }
+
+
 }
 
 

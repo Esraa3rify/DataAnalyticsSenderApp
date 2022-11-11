@@ -37,7 +37,7 @@ public class Register extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
 
-        createAccount = (Button) findViewById(R.id.createAcount);
+        createAccount = (Button) findViewById(R.id.createAccount);
         registerName = (EditText) findViewById(R.id.registerName);
         registerPhoneNum = (EditText) findViewById(R.id.registerPhoneNum);
         registerPassNum = (EditText) findViewById(R.id.registerPassNum);

@@ -11,7 +11,7 @@ import com.example.proven.view.Register;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button JoinNow;
+        Button JoinNow;
 
 
     @Override
@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        JoinNow = (Button) findViewById(R.id.JoinNowBtn);
+        JoinNow =  findViewById(R.id.joinNowBtn);
 
         JoinNow.setOnClickListener(new View.OnClickListener() {
             @Override

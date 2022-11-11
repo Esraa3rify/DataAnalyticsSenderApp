@@ -70,11 +70,11 @@ public class CustomBtnActivity extends AppCompatActivity {
 
         long startTime = System.nanoTime();
         long endTime = System.nanoTime();
-        duration = (endTime - startTime); //give me the time in nanoseconds
+        duration = (endTime - startTime) /360; //give me the time in nanoseconds so i turned it into minutes
 
-        FirebaseDatabase.getInstance().getReference().child("time spent in the CustomBtnActivity").setValue(duration);
+        FirebaseDatabase.getInstance().getReference().child("time spent in the Activity").setValue(duration);
 
-        Toast.makeText(getApplicationContext(), "time spent in the CustomBtnActivity  " + duration, Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "time spent in the Activity  " + duration, Toast.LENGTH_SHORT).show();
 
     }
 
@@ -101,9 +101,9 @@ public class CustomBtnActivity extends AppCompatActivity {
         clickcount++;
 
 
-        FirebaseDatabase.getInstance().getReference().child("Number of clicks on Button ").setValue(clickcount);
+        FirebaseDatabase.getInstance().getReference().child("Number of clicks on Event ").setValue(clickcount);
 
-        Toast.makeText(getApplicationContext(), "Number Of Clicks on Button " + clickcount, Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "Number Of Clicks on Event " + clickcount, Toast.LENGTH_SHORT).show();
 
 
     }

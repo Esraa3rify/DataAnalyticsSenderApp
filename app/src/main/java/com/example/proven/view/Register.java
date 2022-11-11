@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 import com.example.proven.R;
 import com.example.proven.model.Users;
-import com.example.proven.view.dataAnalytics.CustomBtn;
+import com.example.proven.view.dataAnalytics.CustomBtnActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
@@ -117,7 +117,7 @@ public class Register extends AppCompatActivity {
 
                                         //take user to login page
 
-                                        Intent intent= new Intent(Register.this, CustomBtn.class);
+                                        Intent intent= new Intent(Register.this, CustomBtnActivity.class);
                                         startActivity(intent);
                                         //creating account is failed
                                     }else{
@@ -139,7 +139,7 @@ public class Register extends AppCompatActivity {
 
                     Toast.makeText(Register.this, "NetWork Error, Please Try Again Using Another Phone Number.", Toast.LENGTH_SHORT).show();
 
-                    Intent intent= new Intent(Register.this, CustomBtn.class);
+                    Intent intent= new Intent(Register.this, CustomBtnActivity.class);
                     startActivity(intent);
                 }
 

@@ -2,7 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -15,7 +18,14 @@
         android:theme="@style/Theme.Proven"
         tools:targetApi="31">
         <activity
-            android:name=".view.dataAnalytics.CustomBtn"
+            android:name=".location.LocationManager"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".view.dataAnalytics.CustomBtnActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

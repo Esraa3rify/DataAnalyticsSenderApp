@@ -1,23 +1,22 @@
 package com.example.proven.model;
 
-public class Users{
-    private String name, password,image,address;
+public class Users {
+    private String name, password, image, address;
     private static String phone;
-    public Users(){
+
+    public Users() {
 
     }
-
 
 
     public Users(String name, String phone, String password) {
         this.name = name;
         this.password = password;
         this.phone = phone;
-        this.image=image;
-        this.address=address;
+        this.image = image;
+        this.address = address;
 
     }
-
 
 
     public String getAddress() {
@@ -49,7 +48,7 @@ public class Users{
     }
 
     public void setPass(String password) {
-        this. password = password;
+        this.password = password;
     }
 
 

@@ -23,7 +23,7 @@ import java.util.ArrayList;
 public class LocationManager extends AppCompatActivity {
 
 
-    private static  final int REQUEST_LOCATION=1;
+    private static final int REQUEST_LOCATION = 1;
 
     private ArrayList permissionsToRequest;
     private ArrayList permissionsRejected = new ArrayList();
@@ -52,33 +52,52 @@ public class LocationManager extends AppCompatActivity {
         }
 
 
-        Button btn = (Button) findViewById(R.id.getLocation);
+        Button btn1 = (Button) findViewById(R.id.btn1);
+        Button btn2 = (Button) findViewById(R.id.btn2);
 
 
-        btn.setOnClickListener(new View.OnClickListener() {
+        btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                locationTrack = new LocationTrack(LocationManager.this);
+                getLocation();
 
-
-                if (locationTrack.canGetLocation()) {
-
-
-                    double longitude = locationTrack.getLongitude();
-                    double latitude = locationTrack.getLatitude();
-
-                    FirebaseDatabase.getInstance().getReference().child("The User Location when Clicking on Button 3 ").setValue(latitude,longitude);
-
-                    Toast.makeText(getApplicationContext(), "Longitude:" + Double.toString(longitude) + "\nLatitude:" + Double.toString(latitude), Toast.LENGTH_SHORT).show();
-                } else {
-
-                    locationTrack.showSettingsAlert();
-                }
 
             }
         });
 
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                getLocation();
+
+
+            }
+        });
+
+    }
+
+
+    public void getLocation() {
+
+
+        locationTrack = new LocationTrack(LocationManager.this);
+
+
+        if (locationTrack.canGetLocation()) {
+
+
+            double longitude = locationTrack.getLongitude();
+            double latitude = locationTrack.getLatitude();
+
+            FirebaseDatabase.getInstance().getReference().child("The User Location when Clicking on Button ").setValue(latitude, longitude);
+
+            Toast.makeText(getApplicationContext(), "Longitude:" + Double.toString(longitude) + "\nLatitude:" + Double.toString(latitude), Toast.LENGTH_SHORT).show();
+        } else {
+
+            locationTrack.showSettingsAlert();
+        }
     }
 
 

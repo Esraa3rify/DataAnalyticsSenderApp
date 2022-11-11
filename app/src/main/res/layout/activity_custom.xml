@@ -8,7 +8,7 @@
 
 
     <Button
-        android:id="@+id/timeSpent"
+        android:id="@+id/btn1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
@@ -16,44 +16,29 @@
         android:layout_marginRight="15dp"
         android:background="@drawable/buttons"
         android:padding="20dp"
-        android:text="@string/time_spent_in_the_activity"
+        android:text="Button 1"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="18sp" />
 
 
     <Button
-        android:id="@+id/NumOfClicks"
+        android:id="@+id/btn2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="30dp"
         android:layout_marginRight="15dp"
-        android:layout_below="@+id/timeSpent"
+        android:layout_below="@+id/btn1"
         android:background="@drawable/buttons"
         android:padding="20dp"
-        android:text="Number Of Clicks"
+        android:text="Button 2"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="18sp" />
 
 
 
-
-    <Button
-        android:id="@+id/getLocation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="15dp"
-        android:layout_below="@+id/NumOfClicks"
-        android:background="@drawable/buttons"
-        android:padding="20dp"
-        android:text="Get the User Location"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="18sp" />
 
 
 

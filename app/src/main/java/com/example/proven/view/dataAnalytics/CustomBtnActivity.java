@@ -16,7 +16,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class CustomBtnActivity extends AppCompatActivity {
 
-    Button timeSpent, numOfClicks,getTheLocation;
+    Button Button1, Button2, getTheLocation;
     long duration;
 
     private FirebaseAnalytics mFirebaseAnalytics;
@@ -29,38 +29,40 @@ public class CustomBtnActivity extends AppCompatActivity {
         setContentView(R.layout.activity_custom);
 
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
-        numOfClicks = (Button) findViewById(R.id.NumOfClicks);
-        timeSpent = (Button) findViewById(R.id.timeSpent);
-        getTheLocation=(Button)findViewById(R.id.getLocation);
+        Button2 = (Button) findViewById(R.id.btn1);
+        Button1 = (Button) findViewById(R.id.btn2);
 
 
-        timeSpent.setOnClickListener(new View.OnClickListener() {
+        Button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                getTheTime();
-               // recordScreenView();
+
+                getTheLocation();
+                getNumOfClicks();
+
+
+                // recordScreenView();
 
             }
         });
 
-        numOfClicks.setOnClickListener(new View.OnClickListener() {
+        Button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                getTheTime();
                 getNumOfClicks();
 
             }
         });
 
-        getTheLocation.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent= new Intent(CustomBtnActivity.this, LocationManager.class);
-                startActivity(intent);
-            }
-        });
+
+    }
 
 
+    public void getTheLocation() {
+        Intent intent = new Intent(CustomBtnActivity.this, LocationManager.class);
+        startActivity(intent);
 
     }
 
@@ -75,7 +77,6 @@ public class CustomBtnActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), "time spent in the CustomBtnActivity  " + duration, Toast.LENGTH_SHORT).show();
 
     }
-
 
 
     //that is another way to send the data to the firebase and will appear in the dashboard of firebase analytics.
@@ -94,21 +95,18 @@ public class CustomBtnActivity extends AppCompatActivity {
 //    }
 
 
-
-
     private void getNumOfClicks() {
         int clickcount = 0;
 
         clickcount++;
 
 
-        FirebaseDatabase.getInstance().getReference().child("Number of clicks on Button 2 ").setValue(clickcount);
+        FirebaseDatabase.getInstance().getReference().child("Number of clicks on Button ").setValue(clickcount);
 
-        Toast.makeText(getApplicationContext(), "Number Of Clicks on Button 2 " + clickcount, Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "Number Of Clicks on Button " + clickcount, Toast.LENGTH_SHORT).show();
 
 
     }
-
 
 
 }

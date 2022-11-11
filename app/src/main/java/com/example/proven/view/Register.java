@@ -1,8 +1,5 @@
 package com.example.proven.view;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.proven.R;
 import com.example.proven.model.Users;
@@ -37,10 +37,10 @@ public class Register extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
 
-        createAccount=(Button) findViewById(R.id.createAcount);
-        registerName=(EditText) findViewById(R.id.registerName);
-        registerPhoneNum=(EditText) findViewById(R.id.registerPhoneNum);
-        registerPassNum=(EditText) findViewById(R.id.registerPassNum);
+        createAccount = (Button) findViewById(R.id.createAcount);
+        registerName = (EditText) findViewById(R.id.registerName);
+        registerPhoneNum = (EditText) findViewById(R.id.registerPhoneNum);
+        registerPassNum = (EditText) findViewById(R.id.registerPassNum);
         LoadingBar = new ProgressDialog(this);
 
         createAccount.setOnClickListener(new View.OnClickListener() {
@@ -91,7 +91,7 @@ public class Register extends AppCompatActivity {
         //storing data
 
         final DatabaseReference RootRef;
-        RootRef= FirebaseDatabase.getInstance().getReference();
+        RootRef = FirebaseDatabase.getInstance().getReference();
 
         //read data
         RootRef.child("users").child(Phone).addListenerForSingleValueEvent(new ValueEventListener() {
@@ -101,7 +101,7 @@ public class Register extends AppCompatActivity {
 
                 //if number is invalid
 
-                if(!(snapshot.exists())){
+                if (!(snapshot.exists())) {
 
 
                     RootRef.child("users").child(Phone).setValue(new Users(name, Phone, passWord))
@@ -111,16 +111,16 @@ public class Register extends AppCompatActivity {
                                 //After discover that number is invalid, this step is to create another account
 
                                 public void onComplete(@NonNull Task<Void> task) {
-                                    if(task.isSuccessful()){
+                                    if (task.isSuccessful()) {
                                         Toast.makeText(Register.this, "Congratulation, Your Account has been Created.", Toast.LENGTH_SHORT).show();
                                         LoadingBar.dismiss();
 
                                         //take user to login page
 
-                                        Intent intent= new Intent(Register.this, CustomBtnActivity.class);
+                                        Intent intent = new Intent(Register.this, CustomBtnActivity.class);
                                         startActivity(intent);
                                         //creating account is failed
-                                    }else{
+                                    } else {
                                         LoadingBar.dismiss();
                                         Toast.makeText(Register.this, "Network Erroe, Please Try Again afte another Time...", Toast.LENGTH_SHORT).show();
                                     }
@@ -128,7 +128,7 @@ public class Register extends AppCompatActivity {
                             });
 
 
-                }else{
+                } else {
 
                     //Number is valid
 
@@ -139,7 +139,7 @@ public class Register extends AppCompatActivity {
 
                     Toast.makeText(Register.this, "NetWork Error, Please Try Again Using Another Phone Number.", Toast.LENGTH_SHORT).show();
 
-                    Intent intent= new Intent(Register.this, CustomBtnActivity.class);
+                    Intent intent = new Intent(Register.this, CustomBtnActivity.class);
                     startActivity(intent);
                 }
 

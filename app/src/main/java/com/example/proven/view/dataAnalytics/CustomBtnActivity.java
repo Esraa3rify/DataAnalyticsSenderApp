@@ -16,7 +16,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class CustomBtnActivity extends AppCompatActivity {
 
-    Button Button1, Button2, getTheLocation;
+    Button Button1, Button2;
     long duration;
 
     private FirebaseAnalytics mFirebaseAnalytics;

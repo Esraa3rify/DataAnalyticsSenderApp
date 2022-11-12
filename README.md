@@ -7,6 +7,8 @@ Table of content:
 
 5-Tools used.
 
+6-Prototype of the design using figma.
+
 6-The coming updates
 
 7-Screenshots.
@@ -31,6 +33,18 @@ Table of content:
 1-Android studio,Figma 
 
 ----------------------------------------------------------------------------------------------------
+
+
+That is the design using Figma.
+
+This link take you to the Figma design
+
+https://www.figma.com/file/we5goSlvbwSXKtmjXe9kn1/WelcomeActivity?node-id=0%3A1&t=Y3em31eDsimOuLPC-1
+
+
+This link takes you to the design prototype:
+
+https://www.figma.com/file/we5goSlvbwSXKtmjXe9kn1/WelcomeActivity?node-id=0%3A1&t=Y3em31eDsimOuLPC-1
 
 5-The upcoming updates:
 ---------------------
